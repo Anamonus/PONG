@@ -268,9 +268,12 @@ int main(int argc, char* argv[])
 			{
 				eCurrentState = GAMEPLAY;
 			}
+			scoreBlue = 0;
+			scoreRed = 0;
 			break;
 		case INSTRUCTIONS:
 			play.clicked = false;
+			menu.clicked = false;
 			instrct.clicked = false;
 			DrawSprite(instrctScreen);
 			DrawString(reaturnToMain, screenWidth * .55, screenHeight * .85);
@@ -286,6 +289,12 @@ int main(int argc, char* argv[])
 			}
 			break;
 		case GAMEPLAY:
+			//swapped the itoa command to the top so when the game is replayed it shows the correct score
+			play.clicked = false;
+			menu.clicked = false;
+			instrct.clicked = false;
+			itoa(scoreBlue, bufferBlue, 10);
+			itoa(scoreRed, bufferRed, 10);
 			DrawString(bufferBlue, screenWidth * .85, screenHeight * .95);
 			DrawString(bufferRed, screenWidth * .15, screenHeight * .95);
 			ball.dx = ballSpeedX;
@@ -324,7 +333,7 @@ int main(int argc, char* argv[])
 				ball.x = screenWidth / 2;
 				ball.y = screenHeight / 2;
 				ball.spriteId = CreateSprite("./images/Pong_ball.png", ball.width, ball.height, true);
-				itoa(scoreRed, bufferRed, 10);
+				
 			}
 			//Logic for when the ball scores against blue player
 			if (ball.x < (ball.width / 2))
@@ -335,7 +344,7 @@ int main(int argc, char* argv[])
 				ball.x = screenWidth / 2;
 				ball.y = screenHeight / 2;
 				ball.spriteId = CreateSprite("./images/Pong_ball.png", ball.width, ball.height, true);
-				itoa(scoreBlue, bufferBlue, 10);
+				
 			}
 			if (scoreBlue == 10)
 			{
@@ -347,11 +356,12 @@ int main(int argc, char* argv[])
 				file.close();
 				file.clear();
 				eCurrentState = MENU;
-				scoreBlue == 0;
+				scoreBlue = 0;
 			}
 			if (scoreRed == 10)
 			{
 				//Changing the txt to match new total and returning to main menu
+				scoreRed = 0;
 				file.open("PlayerTwoScore.txt", ios::out);
 				playerTwoHighscore++;
 				file << playerTwoHighscore << endl;
@@ -359,7 +369,7 @@ int main(int argc, char* argv[])
 				file.close();
 				file.clear();
 				eCurrentState = MENU;;
-				scoreRed == 0;
+				
 			}
 			//Ending for player's movements and ball movements
 			playerOne.Move(fDeltaT, speed);
@@ -372,8 +382,8 @@ int main(int argc, char* argv[])
 
 		}
 		
-		//gameRunning used to close the game
-	} while (!FrameworkUpdate() && gameRunning);
+		
+	} while (!FrameworkUpdate());
 
 	Shutdown();
 
