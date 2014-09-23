@@ -28,6 +28,7 @@ char redHighscore[10];
 char redLabel[14] = "Red Highscore";
 char blueLabel[15] = "Blue Highscore";
 char reaturnToMain[41] = "Press 'space' to return";
+char quit[41] = "Press 'Q' to quit";
 float ballSpeedX = 0.35;
 float ballSpeedY = 0.35;
 bool gameRunning = true;
@@ -203,7 +204,7 @@ int main(int argc, char* argv[])
 	instrct.width = 250;
 	instrct.height = 125;
 	instrct.clicked - false;
-	instrct.spriteId = CreateSprite("./images/pong_insturctions_button.png", instrct.width, instrct.height, true);
+	instrct.spriteId = CreateSprite("./images/pong_instructions_button.png", instrct.width, instrct.height, true);
 	MoveSprite(instrct.spriteId, instrct.bX, instrct.bY);
 
 
@@ -242,6 +243,7 @@ int main(int argc, char* argv[])
 			DrawSprite(titeleScreen);
 			itoa(playerOneHighscore, redHighscore, 10);
 			itoa(playerTwoHighscore, blueHighscore, 10);
+			DrawString(quit, screenWidth * .38, screenHeight / 2);
 			ClearScreen();
 			//Drawing Highscore and their lables
 			DrawString(blueLabel, screenWidth * .03, screenHeight * .10);
@@ -267,6 +269,10 @@ int main(int argc, char* argv[])
 			if (play.clicked)
 			{
 				eCurrentState = GAMEPLAY;
+			}
+			if (IsKeyDown('Q'))
+			{
+				gameRunning = false;
 			}
 			scoreBlue = 0;
 			scoreRed = 0;
