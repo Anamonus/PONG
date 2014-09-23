@@ -23,6 +23,11 @@ int scoreRed = 0;
 //Player scores and display
 char bufferRed[10] = "0";
 char bufferBlue[10] = "0";
+char blueHighscore[10];
+char redHighscore[10];
+char redLabel[14] = "Red Highscore";
+char blueLabel[15] = "Blue Highscore";
+char reaturnToMain[41] = "Press 'space' to return";
 float ballSpeedX = 0.35;
 float ballSpeedY = 0.35;
 bool gameRunning = true;
@@ -130,6 +135,7 @@ Player playerOne;
 Player playerTwo;
 Button play;
 Button instrct;
+Button menu;
 
 
 
@@ -140,19 +146,15 @@ int main(int argc, char* argv[])
 
 	//Retrieving data from I/O's to display highscores
 	fstream file;
-	file.open("PlayerOneScore.txt", ios_base::in);
-	int playerOneHighscore;
+	file.open("PlayerOneScore.txt", ios::in);
+	int playerOneHighscore = 0;
 	file >> playerOneHighscore;
-	file.sync();
 	file.close();
-	file.clear();
 
-	file.open("PlayerTwoScore.txt", ios_base::in);
-	int playerTwoHighscore;
+	file.open("PlayerTwoScore.txt", ios::in);
+	int playerTwoHighscore = 0;
 	file >> playerTwoHighscore;
-	file.sync();
 	file.close();
-	file.clear();
 
 	//Properties for player one
 	playerOne.width = 48.f;
@@ -185,6 +187,16 @@ int main(int argc, char* argv[])
 	play.spriteId = CreateSprite("./images/pong_play_button.png", play.width, play.height, true);
 	MoveSprite(play.spriteId, play.bX, play.bY);
 
+	//proerties for menu button
+	//ALL OMMITTED EXCEPT ONE BECAUSE I'M LAZY
+//	menu.bX = screenWidth * .80;
+//	menu.bY = screenHeight * .75;
+//	menu.height = 125;
+//	menu.width = 250;
+	menu.clicked = false;
+//	menu.spriteId = CreateSprite("./images/pong_menu_button.png", menu.width, menu.height, true);
+	//MoveSprite(menu.spriteId, menu.bX, menu.bY);
+
 	//properties for instructions button
 	instrct.bX = screenWidth * .67;
 	instrct.bY = screenHeight * .25;
@@ -204,6 +216,7 @@ int main(int argc, char* argv[])
 	MoveSprite(ball.spriteId, ball.x, ball.y);
 
 	SetBackgroundColour(SColour(0, 0, 0, 255));
+	//Preparing the menu backgrounds
 	int instrctScreen = CreateSprite("./images/instructions_screen.png", screenWidth, screenHeight, true);
 	int titeleScreen = CreateSprite("./images/title_screen.png", screenWidth, screenHeight, true);
 	MoveSprite(titeleScreen, screenWidth / 2, screenHeight / 2);
@@ -218,12 +231,23 @@ int main(int argc, char* argv[])
 		switch (eCurrentState)
 		{
 		case MENU:
+			//Making sure the states return to false when cycling menus
+			play.clicked = false;
+			menu.clicked = false;
+			instrct.clicked = false;
 			//Tracking the mouse in order to tell if it is in contact with a button
 			GetMouseLocation(iMouseX, iMouseY);
 			DrawSprite(play.spriteId);
 			DrawSprite(instrct.spriteId);
 			DrawSprite(titeleScreen);
+			itoa(playerOneHighscore, redHighscore, 10);
+			itoa(playerTwoHighscore, blueHighscore, 10);
 			ClearScreen();
+			//Drawing Highscore and their lables
+			DrawString(blueLabel, screenWidth * .03, screenHeight * .10);
+			DrawString(redLabel, screenWidth * .76, screenHeight * .10);
+			DrawString(blueHighscore, screenWidth * .15, screenHeight * .05);
+			DrawString(redHighscore, screenWidth * .85, screenHeight * .05);
 			//Since the mouse location draws differently I couldn't figure out how to detect via the button's Y position so I just used its location from the screen height
 			if (GetMouseButtonDown(MOUSE_BUTTON_1) && iMouseX > (instrct.bX - (instrct.height / 2)) && iMouseX < (instrct.bX + (instrct.height / 2))
 				&& iMouseY >((screenHeight * .75) - (instrct.height / 2)) && iMouseY < ((screenHeight * .75) + (instrct.height / 2)))
@@ -246,12 +270,24 @@ int main(int argc, char* argv[])
 			}
 			break;
 		case INSTRUCTIONS:
+			play.clicked = false;
+			instrct.clicked = false;
 			DrawSprite(instrctScreen);
+			DrawString(reaturnToMain, screenWidth * .55, screenHeight * .85);
 			ClearScreen();
+			//The same code above wasn't working so I decided to be lazy and do this
+			if (IsKeyDown(' '))
+			{
+				menu.clicked = true;
+			}
+			if (menu.clicked)
+			{
+				eCurrentState = MENU;
+			}
 			break;
 		case GAMEPLAY:
-			DrawString(bufferBlue, screenWidth * .15, screenHeight * .95);
-			DrawString(bufferRed, screenWidth * .85, screenHeight * .95);
+			DrawString(bufferBlue, screenWidth * .85, screenHeight * .95);
+			DrawString(bufferRed, screenWidth * .15, screenHeight * .95);
 			ball.dx = ballSpeedX;
 			ball.dy = ballSpeedY;
 			ball.moveX(ball.dx);
@@ -283,34 +319,47 @@ int main(int argc, char* argv[])
 			if (ball.x > screenWidth - (ball.width / 2))
 			{
 				DestroySprite(ball.spriteId);
-				scoreBlue++;
+				scoreRed++;
 				ballSpeedX = (ballSpeedX * -1);
 				ball.x = screenWidth / 2;
 				ball.y = screenHeight / 2;
 				ball.spriteId = CreateSprite("./images/Pong_ball.png", ball.width, ball.height, true);
-				itoa(scoreBlue, bufferBlue, 10);
-				file.open("PlayerOneScore.txt", ios_base::out);
-				file << playerOneHighscore++;
-				file.sync();
-				file.close();
-				file.clear();
+				itoa(scoreRed, bufferRed, 10);
 			}
 			//Logic for when the ball scores against blue player
 			if (ball.x < (ball.width / 2))
 			{
 				DestroySprite(ball.spriteId);
-				scoreRed++;
+				scoreBlue++;
 				ballSpeedY = (ballSpeedY * -1);
 				ball.x = screenWidth / 2;
 				ball.y = screenHeight / 2;
 				ball.spriteId = CreateSprite("./images/Pong_ball.png", ball.width, ball.height, true);
-				itoa(scoreRed, bufferRed, 10);
-				file.open("PlayerTwoScore.txt", ios_base::out);
-				playerTwoHighscore++;
-				file << playerTwoHighscore;
+				itoa(scoreBlue, bufferBlue, 10);
+			}
+			if (scoreBlue == 10)
+			{
+				//Changing the txt to match new total and returning to main menu
+				file.open("PlayerOneScore.txt", ios::out);
+				playerOneHighscore++;
+				file << playerOneHighscore << endl;
 				file.sync();
 				file.close();
 				file.clear();
+				eCurrentState = MENU;
+				scoreBlue == 0;
+			}
+			if (scoreRed == 10)
+			{
+				//Changing the txt to match new total and returning to main menu
+				file.open("PlayerTwoScore.txt", ios::out);
+				playerTwoHighscore++;
+				file << playerTwoHighscore << endl;
+				file.sync();
+				file.close();
+				file.clear();
+				eCurrentState = MENU;;
+				scoreRed == 0;
 			}
 			//Ending for player's movements and ball movements
 			playerOne.Move(fDeltaT, speed);

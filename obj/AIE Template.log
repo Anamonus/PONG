@@ -1,47 +1,58 @@
-﻿Build started 9/22/2014 3:50:34 PM.
+﻿Build started 9/22/2014 5:59:45 PM.
      1>Project "C:\Users\daniel.sherwood\Desktop\PONG\AIE Template.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I./ /I./include/ /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"obj\\" /Fd"obj\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt source\main.cpp
          main.cpp
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(26): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(27): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(70): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(71): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(80): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(88): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(160): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(165): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(166): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(171): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(176): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(177): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(180): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(181): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(185): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(189): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(190): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(193): warning C4552: '-' : operator has no effect; expected operator with side-effect
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(194): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(199): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(200): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(203): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(209): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(210): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(253): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(254): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(288): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(289): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(290): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(291): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(31): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(32): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(75): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(76): warning C4244: '=' : conversion from 'float' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(85): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(93): warning C4244: '=' : conversion from 'unsigned int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(162): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(167): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(168): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(173): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(178): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(179): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(182): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(183): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(187): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(201): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(202): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(205): warning C4552: '-' : operator has no effect; expected operator with side-effect
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(206): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(211): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(212): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(215): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(222): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(223): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(243): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(304): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(305): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(306): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(307): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(244): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(316): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(317): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(212): warning C4101: 'mouse' : unreferenced local variable
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(247): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(248): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(249): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(250): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(276): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(289): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(290): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(324): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(325): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(326): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(327): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(335): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(336): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(337): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(338): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdlib.h(937) : see declaration of 'itoa'
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(350): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(362): warning C4553: '==' : operator has no effect; did you intend '='?
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(365): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(366): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\daniel.sherwood\desktop\pong\source\main.cpp(225): warning C4101: 'mouse' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\AIE Template_d.exe" /INCREMENTAL /NOLOGO /LIBPATH:./libs AIE_1st_Year_Framework_d.lib kernel32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"bin\AIE Template_d.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\AIE Template_d.lib" /MACHINE:X86 obj\main.obj
          AIE_1st_Year_Framework_d.lib(SOIL.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
@@ -77,4 +88,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.43
+Time Elapsed 00:00:01.46
