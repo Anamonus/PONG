@@ -293,6 +293,10 @@ int main(int argc, char* argv[])
 			{
 				eCurrentState = MENU;
 			}
+			if (IsKeyDown('Q'))
+			{
+				gameRunning = false;
+			}
 			break;
 		case GAMEPLAY:
 			//swapped the itoa command to the top so when the game is replayed it shows the correct score
@@ -383,13 +387,17 @@ int main(int argc, char* argv[])
 			DrawSprite(playerOne.spriteId);
 			DrawSprite(playerTwo.spriteId);
 			DrawSprite(ball.spriteId);
+			if (IsKeyDown('Q'))
+			{
+				gameRunning = false;
+			}
 			ClearScreen();
 			break;
 
 		}
 		
 		
-	} while (!FrameworkUpdate());
+	} while (!FrameworkUpdate() && gameRunning);
 
 	Shutdown();
 
