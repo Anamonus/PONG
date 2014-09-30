@@ -150,12 +150,16 @@ int main(int argc, char* argv[])
 	file.open("PlayerOneScore.txt", ios::in);
 	int playerOneHighscore = 0;
 	file >> playerOneHighscore;
+	flie.sync();
 	file.close();
+	file.clear();
 
 	file.open("PlayerTwoScore.txt", ios::in);
 	int playerTwoHighscore = 0;
 	file >> playerTwoHighscore;
+	file.sync();
 	file.close();
+	file.clear();
 
 	//Properties for player one
 	playerOne.width = 48.f;
